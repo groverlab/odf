@@ -19,7 +19,7 @@ def run(comments=""):
     port = ""
     for p in comports():
         print(str(p))
-        if "USB" in str(p) or "usb" in str(p):
+        if "USB" in str(p) or "usb" in str(p) or "Arduino" in str(p):
             port = p.name
             ports += 1
     if ports == 0:
