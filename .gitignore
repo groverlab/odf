@@ -1,5 +1,6 @@
 .DS_Store
 *.json
+!launch.json
 *.png
 
 # Byte-compiled / optimized / DLL files
