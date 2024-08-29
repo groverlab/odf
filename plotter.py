@@ -6,10 +6,6 @@ start = float(r["start_time"])
 stop = float(r["stop_time"])
 data = r["data"]
 
-# data = numpy.loadtxt(sys.argv[1], skiprows=10, )
-# stat = open(sys.argv[1][:-8]+"STAT.txt").read()
-# start = float(stat.split("\n")[0])
-# stop = float(stat.split("\n")[1])
 duration = stop-start
 points = len(data)
 times = numpy.linspace(0, duration, points)
