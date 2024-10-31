@@ -4,12 +4,13 @@ r = json.load(open(sys.argv[1], "r"))
 
 start = float(r["start_time"])
 stop = float(r["stop_time"])
-data = r["data"]
+rawdata = numpy.array(r["data"])
+data = rawdata[(rawdata < 1023)]
+print(max(data))
 
 duration = stop-start
 points = len(data)
 times = numpy.linspace(0, duration, points)
-smooth = scipy.signal.savgol_filter(data, 20, 3)
 fig, ax = plt.subplots(1, 1, figsize=(10, 3))
 ax.plot(times, data)
 # ax.plot(times, smooth)
